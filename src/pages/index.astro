@@ -1,0 +1,99 @@
+---
+import Hero from "@components/Hero/Hero.astro";
+import siteData from "@config/siteData.json";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import heroImage from "@images/hero-bg-min.jpg";
+import customCardImage from "@images/custom-card.jpg";
+import woolCardImage from "@images/wool-card.jpg";
+---
+
+<BaseLayout title={siteData.title} description={siteData.description} navStartStyle="white">
+	<Hero />
+
+	<section class="bg-base-50 py-24 md:py-32">
+		<div class="site-container grid gap-16 md:grid-cols-2 md:items-center md:gap-20">
+			<div>
+				<p class="text-accent-700 mb-4 text-sm font-medium tracking-[0.18em] uppercase">Meet the artist</p>
+				<h2 class="font-heading-1 text-primary-950 mb-6 text-4xl leading-tight md:text-5xl">
+					I'm Deidre. I weave, dye, spin, and photograph.
+				</h2>
+				<p class="text-base-700 mb-4 text-lg leading-relaxed">
+					Paper Street started with a $300 four-shaft loom and a need to babywear my daughter. Ten years
+					and many meters of fabric later, I get to make heirloom-quality custom weaves for people I now
+					call friends.
+				</p>
+				<p class="text-base-700 mb-8 text-lg leading-relaxed">
+					I'm an over-communicator. The collaborative side of custom work is my favourite part — going
+					through every option, every color choice, every fibre, until we land on something we both love.
+				</p>
+				<a href="/about/" class="text-primary-700 hover:text-accent-500 inline-block border-b border-current pb-1 font-medium transition-colors">
+					Read the full story →
+				</a>
+			</div>
+			<div class="font-heading-1 text-primary-900 text-2xl leading-snug italic md:text-[1.625rem]">
+				<span class="text-accent-500 mb-2 block text-5xl leading-none">"</span>
+				The collaborative side of custom work is my favourite part — going through every option, every colour, every fibre, until we land on something we both love.
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-base-50 pb-24 md:pb-32">
+		<div class="site-container">
+			<div class="mb-12 max-w-2xl">
+				<p class="text-accent-700 mb-4 text-sm font-medium tracking-[0.18em] uppercase">Two sides of Paper Street</p>
+				<h2 class="font-heading-1 text-primary-950 mb-4 text-4xl leading-tight md:text-5xl">
+					Custom weaving and hand-dyed roving.
+				</h2>
+				<p class="text-base-700 text-lg leading-relaxed">
+					Custom handwoven pieces are made to order through Paper Street Weaving. Hand-dyed wool roving
+					and combed top is available year-round through the Paper Street Fibre Arts Etsy shop.
+				</p>
+			</div>
+			<div class="grid gap-6 md:grid-cols-2">
+				<a href="/custom/" class="group relative aspect-[4/5] overflow-hidden rounded">
+					<Image src={customCardImage} alt="Handwoven custom piece" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" width={800} />
+					<div class="absolute inset-0 bg-gradient-to-t from-primary-950/90 via-primary-950/30 to-transparent"></div>
+					<div class="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+						<h3 class="font-heading-1 mb-2 text-3xl text-white">Custom Weaving</h3>
+						<p class="mb-4 text-white/85">Made-to-order wraps, cowls, shawls, and accessories. Email to start a conversation about your custom piece.</p>
+						<span class="bg-accent-500 group-hover:bg-accent-700 inline-flex w-max items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-colors">Learn more →</span>
+					</div>
+				</a>
+				<a href="https://www.etsy.com/shop/PaperStreetFibreArts" target="_blank" rel="noopener" class="group relative aspect-[4/5] overflow-hidden rounded">
+					<Image src={woolCardImage} alt="Hand-dyed wool roving" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" width={800} />
+					<div class="absolute inset-0 bg-gradient-to-t from-primary-950/90 via-primary-950/30 to-transparent"></div>
+					<div class="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+						<h3 class="font-heading-1 mb-2 text-3xl text-white">Wool & Roving</h3>
+						<p class="mb-4 text-white/85">Hand-dyed combed top, batts, and handspun yarns. Restocked regularly on Etsy.</p>
+						<span class="bg-accent-500 group-hover:bg-accent-700 inline-flex w-max items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-colors">Shop on Etsy →</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-primary-950 text-primary-100 py-20 md:py-28">
+		<div class="site-container grid gap-12 md:grid-cols-2 md:items-center md:gap-16">
+			<div>
+				<p class="text-accent-300 mb-4 text-sm font-medium tracking-[0.18em] uppercase">Custom pricing</p>
+				<h2 class="font-heading-1 mb-6 text-4xl leading-tight text-white md:text-5xl">Transparent pricing for custom handwovens.</h2>
+				<p class="text-primary-100 mb-8 text-lg leading-relaxed">
+					Hand-dyed base wraps start at $170/m with cotton warp and weft. Upgrades for fibres like merino, silk, tencel, hemp, and bamboo are listed clearly so you know exactly what your piece will cost before we start.
+				</p>
+				<a href="/pricing/" class="bg-accent-500 hover:bg-accent-700 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white transition-colors">See full price list →</a>
+			</div>
+			<div class="rounded-md border border-white/10 bg-white/5 p-8 md:p-10">
+				<div class="space-y-3 text-sm">
+					<div class="flex justify-between border-b border-white/10 pb-3"><span class="text-white/85">Hand-dyed base (cotton warp + weft)</span><span class="font-medium text-white">$170/m</span></div>
+					<div class="flex justify-between border-b border-white/10 pb-3"><span class="text-white/85">Tencel weft upgrade</span><span class="font-medium text-white">+$10/m</span></div>
+					<div class="flex justify-between border-b border-white/10 pb-3"><span class="text-white/85">Merino wool weft</span><span class="font-medium text-white">+$25/m</span></div>
+					<div class="flex justify-between border-b border-white/10 pb-3"><span class="text-white/85">Silk/Linen weft</span><span class="font-medium text-white">+$30/m</span></div>
+					<div class="flex justify-between border-b border-white/10 pb-3"><span class="text-white/85">Mulberry silk weft</span><span class="font-medium text-white">+$40/m</span></div>
+					<div class="flex justify-between"><span class="text-white/85">Hemstitched fringe</span><span class="font-medium text-white">$50–80/side</span></div>
+					<p class="text-white/60 pt-4 text-xs italic">Plus warp upgrades, dye add-ons, and finishing — full breakdown on the pricing page.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

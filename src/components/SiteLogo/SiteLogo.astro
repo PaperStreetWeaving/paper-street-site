@@ -1,0 +1,8 @@
+---
+import siteData from "@config/siteData.json";
+import logo from "@images/paper-street-logo.png";
+import { Image } from "astro:assets";
+---
+<a class="primary-focus flex items-center align-middle" href="/" aria-label={`${siteData.name} home`}>
+	<Image src={logo} alt={siteData.name} loading="eager" width={180} height={120} class="h-12 w-auto md:h-14" />
+</a>

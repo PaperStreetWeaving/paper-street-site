@@ -1,0 +1,41 @@
+---
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+import siteData from "@config/siteData.json";
+import { Icon } from "astro-icon/components";
+import FooterLink from "./FooterLink.astro";
+const today = new Date();
+---
+<footer class="bg-base-100/40 mt-12 flex flex-col items-center justify-center py-12">
+	<div class="site-container">
+		<div class="flex w-full flex-col items-center justify-between gap-4 text-base md:grid md:grid-cols-5 md:items-start md:gap-8">
+			<div class="flex justify-center py-2 text-center md:hidden"><SiteLogo /></div>
+			<div class="col-span-2 flex flex-wrap justify-center gap-x-5 gap-y-2 md:justify-end">
+				<FooterLink href="/">Home</FooterLink>
+				<FooterLink href="/about/">About</FooterLink>
+				<FooterLink href="/custom/">Custom Weaving</FooterLink>
+				<FooterLink href="/pricing/">Pricing</FooterLink>
+			</div>
+			<div class="hidden justify-center text-center md:flex"><SiteLogo /></div>
+			<div class="flex flex-wrap justify-center gap-x-5 gap-y-2 md:col-span-2">
+				<FooterLink href="/cowl-guide/">Cowl Guide</FooterLink>
+				<FooterLink href="/fibre-info/">Fibre Info</FooterLink>
+				<FooterLink href="/us-info/">For US Customers</FooterLink>
+				<FooterLink href="/shipping-returns/">Shipping</FooterLink>
+			</div>
+		</div>
+		<div class="description text-base-700 mx-auto mt-10 max-w-md px-4 text-center">
+			<p class="mb-2">Custom inquiries: <a href="mailto:paperstreetfibrearts@gmail.com" class="text-primary-700 hover:text-accent-500 underline transition-colors">paperstreetfibrearts@gmail.com</a></p>
+			<p class="text-sm">Bowden, Alberta, Canada</p>
+		</div>
+		<div class="text-primary-700 mt-6 flex justify-center gap-5">
+			<a href="https://www.facebook.com/paperstreetweaving" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Icon name="socials/mdi-facebook" class="size-6 transition hover:opacity-70" /></a>
+			<a href="https://www.instagram.com/paperstreetweaving" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Icon name="socials/basil-instagram-solid" class="size-6 transition hover:opacity-70" /></a>
+			<a href="https://www.etsy.com/shop/PaperStreetFibreArts" target="_blank" rel="noopener noreferrer" aria-label="Etsy shop"><span class="font-medium text-sm tracking-wider uppercase">Etsy</span></a>
+		</div>
+		<div class="text-base-700 mt-8 mb-2 flex flex-col items-center gap-2 text-center text-sm opacity-80 md:flex-row md:justify-center md:gap-4">
+			<span>&copy; {today.getFullYear()} {siteData.name}. All rights reserved.</span>
+			<span class="hidden md:inline">·</span>
+			<span class="flex gap-3"><a href="/privacy-policy/" class="hover:text-primary-700 transition">Privacy</a><a href="/terms/" class="hover:text-primary-700 transition">Terms</a></span>
+		</div>
+	</div>
+</footer>

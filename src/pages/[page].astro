@@ -1,0 +1,45 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { type InferGetStaticPropsType } from "astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+	const otherPages: CollectionEntry<"otherPages">[] = await getCollection(
+		"otherPages",
+		({ data }) => {
+			return data.draft !== true;
+		},
+	);
+	return otherPages.map((page) => ({
+		params: { page: page.id },
+		props: page,
+	}));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const page = Astro.props as Props;
+
+const { Content } = await render(page);
+const { title, description, heroImage, heroImageAlt } = page.data;
+---
+
+<BaseLayout title={title} description={description}>
+	{heroImage && (
+		<div class="relative mx-auto mt-24 max-w-5xl px-4 md:mt-32">
+			<div class="aspect-[16/9] overflow-hidden rounded-md">
+				<Image src={heroImage} alt={heroImageAlt || title} class="h-full w-full object-cover" width={1600} />
+			</div>
+		</div>
+	)}
+	<section class={`mx-auto max-w-3xl px-4 ${heroImage ? 'mt-12 md:mt-16' : 'pt-24 md:pt-36'}`}>
+		<h1 class="h1 description text-center">
+			{title}
+		</h1>
+		<div
+			class="text-base-content markdown-content mt-8 max-w-none text-sm md:mt-12 md:px-8 md:text-base"
+		>
+			<Content />
+		</div>
+	</section>
+</BaseLayout>
