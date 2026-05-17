@@ -1,12 +1,12 @@
 ---
 /**
- * * Hero with background image
- * You'll want a mobile image, and a desktop image for this.
+ * * Hero with background image + white logo watermark
  */
 
 import Button from "@components/Button/Button.astro";
 import heroImage from "@images/hero-bg-min.jpg";
 import heroImageMobile from "@images/hero-bg-min.jpg";
+import whiteLogo from "@images/paper-street-logo-white.png";
 import { Image } from "astro:assets";
 ---
 
@@ -30,6 +30,17 @@ import { Image } from "astro:assets";
 			aria-hidden="true"
 			loading="eager"
 			width={1200}
+		/>
+	</div>
+
+	<!-- white logo watermark on hero (top-right corner) -->
+	<div class="pointer-events-none absolute top-24 right-6 z-10 md:top-32 md:right-12">
+		<Image
+			src={whiteLogo}
+			alt="Paper Street Fibre Arts"
+			class="h-32 w-auto opacity-90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] md:h-44 lg:h-56"
+			loading="eager"
+			width={500}
 		/>
 	</div>
 
