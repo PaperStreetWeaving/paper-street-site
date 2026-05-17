@@ -1,0 +1,97 @@
+backend:
+  name: github
+  repo: PaperStreetWeaving/paper-street-site
+  branch: main
+  base_url: https://paper-street-auth.paperstreetweaving.workers.dev
+  auth_endpoint: auth
+
+media_folder: "src/assets/images"
+public_folder: "/_astro"
+
+# Show editor preview pane (basic)
+display_url: https://paperstreetfibrearts.com
+logo_url: https://paperstreetfibrearts.com/favicons/web-app-manifest-192x192.png
+
+site_url: https://paperstreetfibrearts.com
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/data/otherPages/about.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Hero image (optional)", name: "heroImage", widget: "image", required: false }
+          - { label: "Hero image alt text", name: "heroImageAlt", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/pricing.md"
+        label: "Custom Pricing"
+        name: "pricing"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Hero image (optional)", name: "heroImage", widget: "image", required: false }
+          - { label: "Hero image alt text", name: "heroImageAlt", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/custom.md"
+        label: "Custom Weaving Process"
+        name: "custom"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Hero image (optional)", name: "heroImage", widget: "image", required: false }
+          - { label: "Hero image alt text", name: "heroImageAlt", widget: "string", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/cowl-guide.md"
+        label: "Cowl Sizing Guide"
+        name: "cowl-guide"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/fibre-info.md"
+        label: "Fibre Information"
+        name: "fibre-info"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/us-info.md"
+        label: "For US Customers"
+        name: "us-info"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/shipping-returns.md"
+        label: "Shipping & Returns"
+        name: "shipping-returns"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/terms.md"
+        label: "Terms & Conditions"
+        name: "terms"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "src/data/otherPages/privacy-policy.md"
+        label: "Privacy Policy"
+        name: "privacy-policy"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "SEO description", name: "description", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
